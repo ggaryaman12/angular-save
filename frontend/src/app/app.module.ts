@@ -10,7 +10,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { EditCompoundComponent } from './components/edit-compound/edit-compound.component';
 import { CompoundItemComponent } from './components/compound-item/compound-item.component';
 import { ButtonComponent } from './components/button/button.component';
-import { AddCompoundComponent } from './components/add-compound/add-compound.component';
 import { CardComponent } from './pages/card/card.component';
 import { CompoundsComponent } from './pages/compounds/compounds.component';
 import { WrongrequestComponent } from './pages/wrongrequest/wrongrequest.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
     EditCompoundComponent,
     CompoundItemComponent,
     ButtonComponent,
-    AddCompoundComponent,
     CardComponent,
     CompoundsComponent,
     WrongrequestComponent,
