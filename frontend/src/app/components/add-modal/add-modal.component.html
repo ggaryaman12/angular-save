@@ -1,0 +1,184 @@
+<div style=" position: relative; z-index: 10;">
+  <div [routerLink]="['/']" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(107, 114, 128, 0.75); transition: opacity 0.15s linear;"></div>
+
+  <div style="position: fixed;  top: 0; right: 0; bottom: 10; left: 0;  z-index: 10; overflow-y: auto;">
+    <div
+      style="display:flex; min-height: 100%; align-items: flex-end; justify-content: center; padding: 1rem; text-align: center;"
+    >
+      <div
+        style="position: relative;
+        transform: scale(1);
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #ffffff;
+        padding: 5px 20px 15px 20px;
+        margin-top: 8px;
+        width: 100%;
+        max-width: 320px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;  margin-top: 4px;"
+      >
+        <div>
+          <div
+            style="margin-left: auto; margin-right: auto; display: flex; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 50%; background-color: #d1fae5;"
+          >
+            <svg
+              class="h-6 w-6 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              />
+            </svg>
+          </div>
+          <div style="margin-top: 1rem; text-align: center;">
+            <h3
+            style="font-size: 1.25rem; font-weight: 600; line-height: 1.5; color: #1a202c;"
+              id="modal-title"
+            >
+              Add Compound
+            </h3>
+            <div class="mt-2">
+              <form [formGroup]="compoundForm" class="flex flex-col w-full gap-5">
+                <div class="relative">
+                    <label 
+                        for="name" 
+                        
+                    >Name</label>
+                    <input 
+                        formControlName="name" 
+                        type="text" 
+                        id="name" 
+                        style="padding: 0.5rem; 
+                        display: block; 
+                        width: 100%; 
+                        border-radius: 0.375rem; 
+                        border: none; 
+                        padding-top: 0.375rem;
+                        padding-bottom: 0.375rem;
+                        color: #1a202c;
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+                        inset: 0; 
+                        border: 1px solid #e2e8f0; 
+                        placeholder: #a0aec0; 
+                        outline: none;"
+                        placeholder="Cyanide" 
+                    />
+                    <!-- <app-error-message [errorMessage]="'Name is required'" *ngIf="compoundForm.get('name')?.invalid && compoundForm.get('name')?.touched"></app-error-message> -->
+                </div>
+                <div class="relative">
+                    <label 
+                        for="description" 
+                        class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900" 
+                    >Description</label>
+                    <textarea 
+                        formControlName="description" 
+                        id="description" 
+                        style="padding: 0.5rem; 
+                        display: block; 
+                        width: 100%; 
+                        border-radius: 0.375rem; 
+                        border: none; 
+                        padding-top: 0.375rem;
+                        padding-bottom: 0.375rem;
+                        color: #1a202c;
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+                        inset: 0; 
+                        border: 1px solid #e2e8f0; 
+                        placeholder: #a0aec0; 
+                        outline: none;"
+                        placeholder="Cyanide" 
+                        placeholder="In chemistry, a cyanide is a chemical compound ..."
+                    ></textarea>
+                    <!-- <app-error-message [errorMessage]="'Description is required'" *ngIf="compoundForm.get('description')?.invalid && compoundForm.get('description')?.touched"></app-error-message> -->
+                </div>
+                <div class="relative">
+                    <label 
+                        for="image" 
+                        class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900" 
+                    >Image URL</label>
+                    <input 
+                        formControlName="image" 
+                        type="text" 
+                        id="image" 
+                        style="padding: 0.5rem; 
+                        display: block; 
+                        width: 100%; 
+                        border-radius: 0.375rem; 
+                        border: none; 
+                        padding-top: 0.375rem;
+                        padding-bottom: 0.375rem;
+                        color: #1a202c;
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+                        inset: 0; 
+                        border: 1px solid #e2e8f0; 
+                        placeholder: #a0aec0; 
+                        outline: none;"
+                        placeholder="https://upload.wikimedia.org/wikipedia/commons/b/be/name.png" 
+                    />
+                    <!-- <app-error-message [errorMessage]="'Image URL is required'" *ngIf="compoundForm.get('image')?.invalid && compoundForm.get('image')?.touched"></app-error-message> -->
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        <div
+          style="margin-top: 1.25rem; @media (min-width: 640px) {
+            margin-top: 1.5rem; /* 24px */
+        }  @media (min-width: 640px) {
+                display: grid;
+            } @media (min-width: 640px) {
+                grid-auto-flow: row dense;
+            } @media (min-width: 640px) {
+                grid-auto-flow: row dense;
+            } @media (min-width: 640px) {
+                gap: 0.75rem; /* 12px */
+            }"
+        >
+          <button
+            (click)="onSubmit()"
+            type="button"
+           style="display: inline-flex;
+           width: 100%;
+           justify-content: center;
+           border-radius: 0.375rem; 
+           background-color: #34d399; 
+           padding: 0.75rem 1rem;
+           font-size: 0.875rem; 
+           font-weight: 600; 
+           color: #fff; 
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+           transition: background-color 0.3s ease;"
+          >
+            Add
+          </button>
+          <button
+            (click)="closeCreateModalFunc()"
+            type="button"
+            style="margin-top: 0.75rem;
+            display: inline-flex;
+            width: 100%;
+            justify-content: center;
+            border-radius: 0.375rem;
+            background-color: #ffffff;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1a202c; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            border: 1px solid #e2e8f0; 
+            transition: background-color 0.3s ease-in-out;"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+
+<header>
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <!-- <img height="50px" href="#" src="https://nuvertos.com/assets/img/logo1.png"> -->
+        <a class="navbar-brand" href="#"><img height="50px" src="https://nuvertos.com/assets/img/logo1.png"></a>
+        <button (click)="openCreateModalFunc()" class="d-flex btn btn-light">Add Compound</button>
+        <!-- <div
+        (click)="openCreateModalFunc()"
+        class=" cursor-pointer inline-flex items-center px-4 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Add Compound
+      </div> -->
+      </div>
+  </nav>
+</header>
+<app-add-modal *ngIf="openCreateModal" (close)="closeCreateModalFunc()"></app-add-modal>

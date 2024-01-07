@@ -1,0 +1,38 @@
+<div class="container">
+    <div id="display" class="header-section">
+      <div>
+        <button style="background-color: #c1c1c1;"  [routerLink]="['/']" class="d-flex btn btn-light">Go Back</button>
+        <!-- <a routerLink="/">Go Back</a> -->
+      </div>
+      <app-button
+      
+        text="{{ showAddTask ? 'Close' : 'Edit Details' }}"
+        [style.background-color]="showAddTask ? '#E74C3C' : '#c1c1c1'"
+        (click)="onClick()"
+      ></app-button>
+    </div>
+    <div class="compound-details" class="desc-section">
+      <div class="image-section">
+        <img class="compound-image" src="{{compound.image}}" alt="img" />
+        <!-- <div class="desc">
+          <h1>{{ compound.name }}</h1>
+          <p class="desc-text">{{ compound.desc }}</p>
+        </div>
+      </div> -->
+      <div style="margin-left: 20px;" class="desc">
+        <h1>{{ compound.name }}</h1>
+        <p class="desc-text">{{ compound.desc }}</p>
+      </div>
+      <div class="delete-button">
+        <button class="deletebtn" (click)="deleteCompound()">Delete</button>
+      </div>
+    </div>
+    <app-edit-compound
+      *ngIf="showAddTask"
+      [name]="compound.name"
+      [image]="compound.image"
+      [desc]="compound.desc"
+      (editCompound)="editCompound($event)"
+    ></app-edit-compound>
+  </div>
+  
