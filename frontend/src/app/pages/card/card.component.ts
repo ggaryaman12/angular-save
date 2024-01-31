@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
       (response) => {
         this.compound = response;
       },
-      (error) => this.router.navigate(['/400'])
+      (error) => this.router.navigate(['/404'])
     );
   }
 

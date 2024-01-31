@@ -27,12 +27,13 @@
         <button class="deletebtn" (click)="deleteCompound()">Delete</button>
       </div>
     </div>
-    <app-edit-compound
+    
+  </div>
+  <app-edit-compound
       *ngIf="showAddTask"
       [name]="compound.name"
       [image]="compound.image"
       [desc]="compound.desc"
       (editCompound)="editCompound($event)"
     ></app-edit-compound>
-  </div>
   

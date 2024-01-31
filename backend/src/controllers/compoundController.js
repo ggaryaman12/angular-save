@@ -11,6 +11,7 @@ const getAllCompounds=async(req,res)=>{
         offset,
         limit,
         order:[['id','ASC']],
+        
     });
       return res.status(200).send(response);
   }
@@ -113,6 +114,9 @@ const getAllCompounds=async(req,res)=>{
         const nuvertos_Compounds = await nuvertos_compounds.findOne({
             where:{id}
         });
+        if(!nuvertos_Compounds){
+          return res.status(404).json({message:"not found"});
+        }
         return res.json(nuvertos_Compounds)
     }catch(err){
         console.log(err);
